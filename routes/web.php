@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CctvController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/cctv', CctvController::class)->name('cctv.list');
+Route::get('/cctv/lihat', [CctvController::class, 'monitorCctv'])->name('cctv.monitor');
