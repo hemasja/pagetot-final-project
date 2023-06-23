@@ -44,12 +44,12 @@
             <tbody>
                 @forelse ($rooms as $room)
                 <tr>
-                    <td>{{ $room->id_kamar }}</td>
+                    <td>{{ $room->id }}</td>
                     <td>{{ $room->jenis_kamar }}</td>
                     <td>{{ $room->description }}</td>
                     <td>
                         @if ($room->description == 'Terisi')
-                        <a href="{{ route('room.show', $room->id_kamar) }}" style="text-decoration: none">
+                        <a href="{{ route('room.show', $room->id) }}" style="text-decoration: none">
                             <button type="button" class="btn btn-warning me-sm-5">Lihat penghuni</button>
                         </a>
                         @else

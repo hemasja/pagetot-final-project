@@ -13,7 +13,7 @@ class Inventory extends Model
     public static function getAll()
     {
         $result = DB::table('inventaris')
-        ->join('rooms', 'inventaris.id_barang', '=', 'rooms.id_kamar')
+        ->join('rooms', 'inventaris.id_barang', '=', 'rooms.id')
         ->select('*', 'rooms.jenis_kamar')
         ->get();
 
