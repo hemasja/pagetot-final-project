@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('inventaris', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_barang');
             $table->string('nama_barang');
             $table->string('status');
             $table->foreign('id_kamar')->references('id')->on('rooms')->onDelete('cascade');
