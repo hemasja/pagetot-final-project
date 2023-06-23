@@ -6,16 +6,24 @@
 
 <body>
     <form action="" method="post">
-        <div class="card">
-            <div class="card-body" style="background-color: #e3f2fd">
-                <h3 class="card-title">Admin Page</h3>
-                <button type="button" id="refreshBtn" class="btn btn-secondary mt-lg-4 text-light"
-                    onclick="location.reload()">Refresh</button>
-                <a href=": none">
-                    <button type="button" class="btn btn-info mt-lg-4 ms-xxl-4 text-light">Logout</button>
-                </a>
+            <div class="card rounded-0 border-0 main-theme mb-xxl-5" style="height: 150px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="card-title text-light fw-bold">Daftar Kamar Kos</h3>
+                        </div>
+                        <div class="col">
+                            <div class="position-absolute bottom-0 end-0 me-5 mb-3">
+                                <button type="button" id="refreshBtn" class="btn btn-secondary text-light me-3"
+                                    onclick="location.reload()">Refresh</button>
+                                <a href="{{ route('room.list') }}">
+                                    <button type="button" class="btn btn-info text-light">Back</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
         <h1>Profil Penghuni Kamar</h1>
         <div class="card">
@@ -24,7 +32,7 @@
                 <h5 class="card-title">Rifky</h5>
                 <p class="card-text">08218998391</p>
                 <p class="card-text">Email</p>
-                <h5 class="card-title">{{ $room->name }}</h5>
+                <h5 class="card-title">{{ $room->jenis_kamar }}</h5>
             </div>
         </div>
     </form>

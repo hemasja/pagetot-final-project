@@ -2,7 +2,7 @@
 <html lang="en">
 
 @extends('components.head')
-@section('title', 'PAGETOT | Daftar Kamar Kos')
+@section('title', 'PAGETOT | Daftar Inventaris Kos')
 
 <body>
     <form action="" method="post">
@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <h3 class="card-title text-light fw-bold">Daftar Kamar Kos</h3>
+                            <h3 class="card-title text-light fw-bold">Daftar Inventaris Kos</h3>
                         </div>
                         <div class="col">
                             <div class="position-absolute bottom-0 end-0 me-5 mb-3">
@@ -36,30 +36,34 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Nama</th>
-                    <th>Deskripsi</th>
+                    <th>Nama Barang</th>
+                    <th>Letak Barang</th>
+                    <th>Keterangan</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse ($rooms as $room)
+                @forelse ($inventaris as $barang)
                 <tr>
-                    <td>{{ $room->id_kamar }}</td>
-                    <td>{{ $room->jenis_kamar }}</td>
-                    <td>{{ $room->description }}</td>
+                    <td>{{ $barang->id_barang }}</td>
+                    <td>{{ $barang->nama_barang }}</td>
+                    <td>{{ $barang->jenis_kamar }}</td>
+                    <td>{{ $barang->status }}</td>
                     <td>
-                        @if ($room->description == 'Terisi')
-                        <a href="{{ route('room.show', $room->id_kamar) }}" style="text-decoration: none">
-                            <button type="button" class="btn btn-warning me-sm-5">Lihat penghuni</button>
+                        @if ($barang->status == 'Rusak')
+                        <a href="#" style="text-decoration: none">
+                            <button type="button" class="btn btn-danger me-sm-5">Hapus</button>
                         </a>
                         @else
-                        <p>Kamar kosong</p>
+                            <a href="#" style="text-decoration: none">
+                            <button type="button" class="btn btn-warning me-sm-5">Edit</button>
+                        </a>
                         @endif
                     </td>
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="4">Belum ada kamar kos.</td>
+                    <td colspan="4">Belum Ada Barang</td>
                 </tr>
                 @endforelse
             </tbody>

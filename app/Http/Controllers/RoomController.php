@@ -14,9 +14,9 @@ class RoomController extends Controller
     }
 
     public function show(Room $room)
-{
-    return view('admin.rooms.show', compact('room',));
-}
+    {
+        return view('admin.rooms.show', compact('room'));
+    }
 
 
 }
